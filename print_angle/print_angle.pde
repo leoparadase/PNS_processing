@@ -32,7 +32,24 @@ void draw() {
   strokeWeight(4);
   line(0,0,mouse.x,mouse.y);
   
-  float a = PVector.angleBetween(mouse, horizon);
-  println(degrees(a));
+  float a = PVector.angleBetween(mouse, horizon); //<>//
+  float b = sin(a); //<>//
+  float c = cos(a);
+  
+  String text1 = "Angle: " + degrees(a);
+  String text2 = "sin: " + b; //<>//
+  String text3 = "cos: " + c;
+  
+  PFont f;
+  f = createFont("Arial", 8, true);
+  textFont(f, 16);
+  fill(255);
+  
+  text(text1, 150, 100);
+  text(text2, 150, 130);
+  text(text3, 150, 150);
+  
+  
+  //println(degrees(a));
   
 }
