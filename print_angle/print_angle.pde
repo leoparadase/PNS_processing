@@ -33,8 +33,17 @@ void draw() {
   line(0,0,mouse.x,mouse.y);
   
   float a = PVector.angleBetween(mouse, horizon); //<>//
+  if (mouse.y > 0)
+  {
+      a = TWO_PI - a;
+  }
   float b = sin(a); //<>//
   float c = cos(a);
+  if ((degrees(a) == 90) || (degrees(a) == 270))
+  {
+    c = 0;
+  }
+
   
   String text1 = "Angle: " + degrees(a);
   String text2 = "sin: " + b; //<>//
