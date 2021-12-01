@@ -43,6 +43,10 @@ void draw() {
   {
     c = 0;
   }
+  if ((degrees(a) == 180) || (degrees(a) == 0))
+  {
+    b = 0;
+  }
 
   
   String text1 = "Angle: " + degrees(a);
