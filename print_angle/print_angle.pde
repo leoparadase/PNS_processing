@@ -1,4 +1,4 @@
-void setup() {
+void setup() { //<>// //<>// //<>//
   size(640,360);
 }
 
@@ -20,11 +20,7 @@ void draw() {
   horizon.sub(center);
   
   // Normalize the vector
-  mouse.normalize();
   horizon.normalize();
-  
-  // Multiply its length by 150 (Scaling its length)
-  mouse.mult(150);
 
   translate(width/2,height/2);
   // Draw the resulting vector
@@ -32,12 +28,22 @@ void draw() {
   strokeWeight(4);
   line(0,0,mouse.x,mouse.y);
   
-  float a = PVector.angleBetween(mouse, horizon); //<>//
+  // A line projecting the mouse location on X axis
+  stroke(100);
+  strokeWeight(2);
+  line(mouse.x, 0, mouse.x, mouse.y);
+  
+  // A line projecting the mouse location on Y axis
+  line(0, mouse.y, mouse.x, mouse.y);
+  
+  float length = sqrt(sq(mouse.x)+sq(mouse.y));
+  
+  float a = PVector.angleBetween(mouse, horizon);
   if (mouse.y > 0)
   {
       a = TWO_PI - a;
   }
-  float b = sin(a); //<>//
+  float b = sin(a);
   float c = cos(a);
   if ((degrees(a) == 90) || (degrees(a) == 270))
   {
@@ -47,20 +53,38 @@ void draw() {
   {
     b = 0;
   }
-
   
+  double d0 = Math.sinh(a);
+  float d1 = (float) d0;
+  double e0 = Math.cosh(a);
+  float e1 = (float) e0;
+  
+  String text0 = "Length: " + length;
   String text1 = "Angle: " + degrees(a);
-  String text2 = "sin: " + b; //<>//
+  String text2 = "sin: " + b;
   String text3 = "cos: " + c;
+  String text4 = "tg: " + b/c;
+  String text5 = "ctg: " + c/b;
+  String text6 = "sec " + 1/c;
+  String text7 = "cosec: " + 1/b;
+  String text8 = "sinh: " + d1;
+  String text9 = "cosh: " + e1;
   
   PFont f;
   f = createFont("Arial", 8, true);
   textFont(f, 16);
   fill(255);
   
-  text(text1, 150, 100);
-  text(text2, 150, 130);
-  text(text3, 150, 150);
+  text(text0, 150, -50);
+  text(text1, 150, -20);
+  text(text2, 150, 10);
+  text(text3, 150, 30);
+  text(text4, 150, 50);
+  text(text5, 150, 70);
+  text(text6, 150, 90);
+  text(text7, 150, 110);
+  text(text8, 150, 130);
+  text(text9, 150, 150);
   
   
   //println(degrees(a));
