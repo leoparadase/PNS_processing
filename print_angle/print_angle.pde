@@ -69,11 +69,23 @@ void draw() {
   String text7 = "cosec: " + 1/b;
   String text8 = "sinh: " + d1;
   String text9 = "cosh: " + e1;
+  String text10 = " 0";
+  String text11 = " π/2";
+  String text12 = " π";
+  String text13 = " 3π/2";
   
   PFont f;
   f = createFont("Arial", 8, true);
   textFont(f, 16);
   fill(255);
+  
+  line(-125 ,0, 125, 0);
+  line(0 , -100, 0, 100);
+  line(110, 9, 125, 0);
+  line(110, -9, 125, 0);
+  line(9, -85, 0,- 100);
+  line(-9, -85, 0,- 100);
+  
   
   text(text0, 150, -50);
   text(text1, 150, -20);
@@ -85,7 +97,10 @@ void draw() {
   text(text7, 150, 110);
   text(text8, 150, 130);
   text(text9, 150, 150);
-  
+  text(text10, 100, -10);
+  text(text11, -15, -110);
+  text(text12, -130, -10);
+  text(text13, -15, 115);
   
   //println(degrees(a));
   
