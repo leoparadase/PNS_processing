@@ -1,4 +1,4 @@
-void setup() { //<>// //<>// //<>//
+void setup() { //<>//
   size(640,360);
 }
 
@@ -23,6 +23,7 @@ void draw() {
   horizon.normalize();
 
   translate(width/2,height/2);
+  
   // Draw the resulting vector
   stroke(255);
   strokeWeight(4);
@@ -79,6 +80,9 @@ void draw() {
   textFont(f, 16);
   fill(255);
   
+  
+  stroke(255);
+  strokeWeight(2.5);
   line(-125 ,0, 125, 0);
   line(0 , -100, 0, 100);
   line(110, 9, 125, 0);
